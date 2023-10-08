@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+        <input type="submit" value="Enviar">
+    </form>
+    <form>
+        <h3>
+            Qual seu nível na Programação
+        </h3>
+        <label for="iniciante">
+            <input type="radio" name="nivel" id="iniciante"> Comecei agora
+        </label>
+        <label for="medio">
+            <input type="radio" name="nivel" id="medio"> Estou estudando a pouco tempo
+        </label>
+        <label for="avançado">
+            <input type="radio" name="nivel" id="avançado"> Estou estudando à bastante tempo
+        </label>
+        <h3>
+            Nível Escolar
+        </h3>
+        <label for="escolar">
+            Sua escolaridade
+            <select name="escolar" id="escolar" required>
+                <option selected disabled value="">Selecione</option>
+                <option value="primario">Primario</option>
+                <option value="colegial">Colégial</option>
+                <option value="2grau">2° Grau</option>
+            </select>
+        </label>
+        <input type="submit" value="enviar">
+    </form>
+    <hr>
+    <video poster="./public/thumb.png" controls width="420" loop muted>
+        <source src="./public/natureza.mp4" type="video/mp4">
+    </video>
+</body>
+</html>
