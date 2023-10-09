@@ -1,0 +1,26 @@
+.container {
+    background-color: #121212;
+    height: 500px;
+    margin: 50px;
+
+    display: flex;
+    
+}
+
+.area {
+    width: 100px;
+    height: 100px;
+}
+
+.item-1 {
+    background-color: brown;
+}
+
+.item-2 {
+    background-color: aqua;
+}
+
+.item-3 {
+    background-color: cadetblue;
+    flex: 1;
+}
