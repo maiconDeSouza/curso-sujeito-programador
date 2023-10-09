@@ -1,0 +1,26 @@
+.rede-social {
+    border: 1px solid aqua;
+}
+
+.rede-social h2 {
+    text-align: center;
+}
+
+.rede-social ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.rede-social ul li {
+    margin-bottom: 1rem;
+}
+
+.rede-social ul li a {
+    text-decoration: none;
+    color: coral;
+}
+
+.rede-social ul li a:hover {
+    color: chocolate;
+}

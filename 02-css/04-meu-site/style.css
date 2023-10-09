@@ -1,0 +1,21 @@
+.pai {
+    width: 720px;
+    height: 80vh;
+
+    border: 5px solid aqua;
+
+    margin: 0 auto;
+
+    /* position: relative; */
+}
+
+.filho {
+    width: 100px;
+    height: 100px;
+
+    background-color: brown;
+
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed:wght@700&display=swap');
+
+#principal {
+    font-size: 3rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 900;
+}
+
+.noticia {
+    font-size: 1.5rem;
+    color: slategray;
+    font-family: 'Poppins', sans-serif;
+}
+
+.estilo-paragrafo {
+    font-size: 0.85rem;
+    font-family: 'Poppins', sans-serif;
+}
+
