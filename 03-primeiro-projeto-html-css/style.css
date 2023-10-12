@@ -9,8 +9,15 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     height: 5rem;
+    position: sticky;
+    top: 0;
+    z-index: 9;
 }
 
 .nav {
@@ -65,4 +72,126 @@ header {
 
 .main main p{
     color: #1e96fc;
+}
+
+.main main .call-to-action {
+    cursor: pointer;
+    background-color: #fff;
+    border: 0;
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: bold;
+
+    transition: 0.9s;
+}
+
+.main main .call-to-action:hover {
+    transform: scale(1.1);
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin: 5rem 0;
+}
+
+.about article {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about article h2 {
+    font-size: 2rem;
+}
+
+.about article .p {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about aside {
+    padding-right: 10%;
+}
+
+.about aside img {
+    max-width: 28.125rem;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin: 5rem 0;
+}
+
+.projects .title {
+    padding: 0 10%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects .title h2 {
+    font-size: 2rem;
+}
+
+.projects .images {
+    padding: 0 10%;
+
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.projects .images img {
+    width: 30%;
+    opacity: 0.8;
+
+    transition: 0.9s;
+}
+
+.projects .images img:hover {
+    opacity: 1;
+}
+
+.projects .action {
+    cursor: pointer;
+    margin-top: calc(-2.5rem + 1rem);
+
+    background-color: #181818;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+
+    color: #fff;
+    font-size: 2rem;
+}
+
+.footer footer {
+    height: 5rem;
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+
+    color: #fff;
+}
+
+.footer footer span a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
