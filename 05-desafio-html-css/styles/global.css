@@ -1,0 +1,18 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --blue: #0056fb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body, input, textarea, button{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}

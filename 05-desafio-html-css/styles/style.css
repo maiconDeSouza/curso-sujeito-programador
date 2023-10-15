@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('./global.css');
+@import url('./login.css');
+@import url('./register.css');
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+}
+
+.inputs {
+    flex: 1;
+    background-color: var(--white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.inputs .style-form {
+    width: 90%;
+    height: 90%;
+    max-width: 28.125rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.inputs .style-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.inputs .style-form form h2 {
+    font-size: 2.625rem;
+    font-weight: 700;
+    text-align: start;
+
+    width: 90%;
+    max-width: 27.75rem;
+}
+
+.input {
+    width: 90%;
+    max-width: 27.75rem;
+    height: 3.063rem;
+
+    border: 1px solid var(--black);
+
+    border-radius: 8px;
+}
+
+.input::placeholder {
+    padding-left: 1rem;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.button {
+    width: 90%;
+    max-width: 27.75rem;
+    height: 3.063rem;
+
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--blue);
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+span.register {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--black);
+
+    width: 90%;
+    max-width: 27.75rem;
+    height: 3.063rem;
+}
+
+a.register {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    -webkit-user-select: none;
+    user-select: none;
+
+    text-decoration: none;
+}
+
+.content {
+    flex: 1;
+    background-color: var(--blue);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content main {
+    width: 90%;
+    height: 90%;
+    max-width: 28.125rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.content main img {
+    width: 32.813rem;
+    max-width: 70%;
+}
+
+.content main h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.content main p {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--white);
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .content main {
+        padding: 2rem 1rem;
+    }
+
+    .content main h1 {
+        font-size: 1.5rem;
+    }
+
+    .content main p {
+        font-size: 0.875rem;
+    }
+}
