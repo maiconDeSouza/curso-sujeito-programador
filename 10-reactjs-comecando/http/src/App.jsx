@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import styles from './App.module.css'
 
 
 const url = 'https://sujeitoprogramador.com/rn-api/?api=posts'
@@ -17,13 +18,30 @@ export function App() {
   
   return (
     <>
-      <ul>
-        {
-          nutri.map(item => {
-            return <li key={item.id}>{item.titulo}</li>
-          })
-        }
-      </ul>
+      <header className={styles.header}>
+        <h1>ReactNutri</h1>
+      </header>
+
+      <main>
+        <div className={styles.previewposts}>
+          <ul>
+            {
+              nutri.map(item => {
+                return (
+                  <li key={item.id}>
+                    <article>
+                      <h1 className={styles.titlepost}>{item.titulo}</h1>
+                      <img src={item.capa} alt="" />
+                      <p>{item.subtitulo}</p>
+                      <button>Continuar Lendo</button>
+                    </article>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
+      </main>
     </>
   )
 }

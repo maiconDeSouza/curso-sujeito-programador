@@ -7,3 +7,41 @@
 
     background-color: var(--container-background);
 }
+
+.container main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container main img {
+    width: 80vw;
+    max-width: 31.25rem;
+}
+
+.container main div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+
+}
+
+.container main div .star {
+    color: #FFD700;
+}
+
+.container main div button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+}
+
+.container main div .heart {
+    color: #e3e3e3;
+}
+
+.container main div .heartTwo {
+    color: #FF0000;
+}

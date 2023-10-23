@@ -1,0 +1,62 @@
+.header {
+    background-color: #333333;
+    width: 100vw;
+    height: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .previewposts {
+    width: 80vw;
+    max-width: 45rem;
+    margin: 2rem auto;
+}
+
+main .previewposts ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+}
+
+main .previewposts ul li article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+main .previewposts ul li article .titlepost {
+    font-size: 1.5rem;
+}
+
+main .previewposts ul li article img {
+    width: 80vw;
+    max-width: 45rem;
+}
+
+main .previewposts ul li article p {
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+main .previewposts ul li article button {
+    cursor: pointer;
+    padding: 1rem;
+    border: 0;
+    border-radius: 8px;
+
+    background-color: #00A7E1;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+
+    transition: all 0.5s;
+}
+
+main .previewposts ul li article button:hover {
+    background-color: #0083B0;
+}

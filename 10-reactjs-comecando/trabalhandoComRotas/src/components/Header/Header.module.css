@@ -1,0 +1,22 @@
+.header {
+    width: 100vw;
+    max-width: 100vw;
+
+    height: 5rem;
+
+    background-color: aquamarine;
+}
+
+.header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header nav a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+}

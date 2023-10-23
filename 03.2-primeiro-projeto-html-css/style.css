@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 2rem 0;
+}
+
+header {
+    height: 5rem;
+    background-color: #484848
+}
+
+header nav {
+    height: 5rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: aliceblue;
+}
+
+header nav ul li a:hover {
+    color: #D8E6EC;
+}
+
+#home {
+    height: calc(100vh - 5rem);
+    background-image: url('./images/programador.png');
+}
+
+
+#home .container .title {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+#home .container .title span {
+    font-size: 3.125rem
+}
+
+
+#home .container .title span h1 {
+    display: inline-block;
+    font-size: 3.125rem
+}

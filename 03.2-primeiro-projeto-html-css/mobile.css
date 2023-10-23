@@ -1,0 +1,22 @@
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    header nav {
+        justify-content: center;
+    }
+
+    #home {
+        background-size: cover;
+    }
+
+
+    #home .container .title span {
+        font-size: 1.75rem
+    }
+
+    #home .container .title span h1 {
+        font-size: 1.75rem
+    }
+}
