@@ -1,0 +1,45 @@
+.header {
+    background-color: var( --header-background);
+    color: var(--header-text-color);
+    width: 80vw;
+    max-width: 40rem;
+    height: 3rem;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid var( --header-background);
+    border-radius: 8px;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0.5rem;
+    z-index: 999;
+}
+
+.header h1.mcn {
+    font-family: 'Playpen Sans', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.header nav ul {
+    display: flex;
+
+    gap: 1rem;
+}
+
+.header nav ul li a {
+    color: var(--header-text-color);
+}
+
+@media (max-width: 768px){
+    html{
+        font-size: 87.5%;
+    }
+    .header h1.mcn {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,32 @@
+:root {
+    --header-background: #040409;
+    --header-text-color: #dfe0e1;
+    --body-background: #040409;
+    --body-text-color: #ececed;
+    --container-background: #00050d;
+    --button-background: #1a98ff;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, button, a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    background-color: var(--body-background);
+    color: var(--body-text-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
