@@ -28,6 +28,10 @@
 
 }
 
+.container main p {
+    text-align: center;
+}
+
 .container main div .star {
     color: #FFD700;
 }

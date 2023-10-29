@@ -1,8 +1,14 @@
-import { RouteApp } from "./components/RouteApp/RouteApp";
+import { ToastContainer } from "react-toastify";
+import { RouteApp } from "./components/RouteApp";
+import 'react-toastify/dist/ReactToastify.css'
 
 export function App() {
   return (
-    <RouteApp />
+    <>
+    <ToastContainer autoClose={3000}/>
+      <RouteApp />
+    </>
   )
 }
+
 
