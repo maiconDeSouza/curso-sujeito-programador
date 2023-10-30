@@ -1,0 +1,1 @@
+let valor1: number

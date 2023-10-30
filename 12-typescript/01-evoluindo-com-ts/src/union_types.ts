@@ -1,0 +1,2 @@
+let userID: number | string
+

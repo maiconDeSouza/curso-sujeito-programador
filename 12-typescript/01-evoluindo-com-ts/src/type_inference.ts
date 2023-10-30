@@ -9,3 +9,5 @@ const arrayDeTec = [
     "js",
     123
 ]
+
+// const arrayDeTec: (string | number)[]
