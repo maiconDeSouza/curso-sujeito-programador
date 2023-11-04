@@ -1,0 +1,43 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wrapper input {
+    flex: 1;
+
+    padding: 0.625rem 1.25rem;
+
+    background-color: var(--input-background);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+
+    color: var(--text-color);
+    font-size: 1rem;
+
+    outline: 0;
+    
+}
+
+.wrapper button {
+    background-color: var(--button-background);
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.wrapper button:active {
+    transform: scale(1.1);
+}
+
+.wrapper button svg {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}

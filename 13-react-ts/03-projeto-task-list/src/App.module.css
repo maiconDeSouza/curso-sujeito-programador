@@ -1,0 +1,7 @@
+.container {
+    width: 80vw;
+    max-width: 75rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: var(--header-dark);
+}

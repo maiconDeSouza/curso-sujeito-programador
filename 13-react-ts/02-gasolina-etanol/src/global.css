@@ -1,0 +1,22 @@
+:root {
+    --background-color: #202124; /* Cor de fundo */
+    --text-color: #ffffff; /* Cor do texto */
+    --accent-color: #4caf50; /* Cor de destaque (verde) */
+    --input-background: #3d4043; /* Cor de fundo dos inputs */
+    --input-text-color: #ffffff; /* Cor do texto nos inputs */
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body, input, button {
+    font-family: 'Roboto', sans-serif;
+}

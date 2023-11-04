@@ -1,0 +1,47 @@
+.wrapper {
+    width: 100%;
+    height: 3rem;
+
+
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    border-radius: 8px;
+}
+
+.wrapper.in-progress {
+    border: 1px solid var(--in-progress-border);
+    background-color: var(--in-progress-fill);
+}
+
+.wrapper.completed {
+    border: 1px solid var(--completed-border);
+    background-color: var(--completed-fill);
+}
+
+.wrapper span {
+    flex: 1;
+
+    font-weight: 700;
+    font-size: 1.5rem;
+
+}
+
+.wrapper.in-progress span{
+    color: var(--in-progress-text);
+}
+
+.wrapper svg {
+    cursor: pointer;
+}
+
+.wrapper.in-progress svg {
+    color: var(--in-progress-text);
+}
+
+.wrapper svg:hover {
+    color: #ff1744;
+}
