@@ -1,0 +1,28 @@
+:root {
+    --background-dark: #222;        /* Fundo escuro */
+    --text-color: #fff;             /* Texto branco */
+    --button-background: #1E88E5;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+     background-color: var(--background-dark);
+     color: var(--text-color);
+  }
+
+  body, button, input {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  li {
+    list-style: none;
+  }

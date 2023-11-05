@@ -1,3 +1,4 @@
+import { useMemo } from "react"
 import { iTaskList } from "../../App"
 import { Task } from "../Task/Task"
 import styles from "./ViewTask.module.css"
@@ -9,11 +10,20 @@ interface ViewProps {
 }
 
 export function ViewTask({taskList, onDone, onDestroy}:ViewProps){
+    const totalInProgress = useMemo(() => {
+        const totalInProgress = taskList.filter(task => !task.done)
+        return totalInProgress.length
+    }, [taskList])
+
+    const totalCompleted = useMemo(() => {
+        const totalCompleted = taskList.filter(task => task.done)
+        return totalCompleted.length
+    },[taskList])
     return (
         <div className={styles.wrapper}>
             <h2>Task List</h2>
             <div className={styles.task}>
-                <h3>Em andamento</h3>
+                <h3>Em andamento - {totalInProgress}</h3>
                 <ul>
                     {
                         taskList.map(task => {
@@ -35,7 +45,7 @@ export function ViewTask({taskList, onDone, onDestroy}:ViewProps){
                 </ul>
             </div>
             <div className={styles.task}>
-                <h3>Concluídas</h3>
+                <h3>Concluídas - {totalCompleted}</h3>
                 <ul>
                     {
                         taskList.map(task => {
