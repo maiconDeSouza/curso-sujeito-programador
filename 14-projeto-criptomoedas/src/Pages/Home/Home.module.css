@@ -1,0 +1,133 @@
+.container{
+    padding: 1rem;
+}
+
+.container form {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+.container form input {
+    flex: 1;
+    height: 2.75rem;
+    border: 0;
+    border-radius: 8px;
+    padding: 0 0.5rem;
+    outline: none;
+}
+
+.container form button {
+    background-color: transparent;
+    border: 0;
+}
+
+.container table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 0.875rem;
+}
+
+.container table .tr {
+    background-color: #1d1c20;
+}
+
+.container table  td:first-child, .container table  th:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.container table  td:last-child, .container table  th:last-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.container table  th {
+    font-size: 0.875rem;
+    letter-spacing: 0.188rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.tdlabel span {
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.tdlabel  {
+    color: #bbb;
+}
+
+.tdprofit {
+    color: #12f98a;
+}
+
+.tdloss {
+    color: #f91257;
+}
+
+.tdlabel a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.tdlabel a span {
+    color: #fff;
+    transition: color 0.5s;
+}
+
+.tdlabel a span:hover {
+    color: #30beff;
+}
+
+table th, table td {
+    padding: 0.875rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table thead{
+        border: none;
+        clip: rect(0 0 0);
+        height: 0.063rem;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        margin: -0.063rem;
+    }
+
+    .tr {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        margin-bottom: 0.875rem;
+    }
+
+    table td{
+        border-bottom: 1px solid rgba(221, 221, 22, 0.160);
+        display: block;
+        font-size: 0.875rem;
+        text-align: right;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+
+    .container table  td:first-child, .container table  th:first-child {
+        border-radius: 0;
+    }
+    
+    .container table  td:last-child, .container table  th:last-child {
+        border-radius: 0;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+    }
+}
