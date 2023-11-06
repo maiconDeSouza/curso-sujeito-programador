@@ -1,7 +1,7 @@
 import { Search } from "lucide-react"
 import styles from "./Home.module.css"
-import { Link } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { FormEvent, useEffect, useState } from "react"
 //https://coinlib.io/api/v1/coinlist?key=682c3a9cd6ebad15&pref=BRL
 
 interface CoinsProps {
@@ -18,11 +18,20 @@ interface CoinsProps {
 
 export function Home(){
     const [ coins, setCoins ] = useState<CoinsProps[]>([])
+    const [ inputValue, setInputValue ] = useState("")
+    const navidate = useNavigate()
 
     const price = Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL"
     })
+
+    function handleSearch(e:FormEvent){
+        e.preventDefault()
+        if(!inputValue)return
+
+        navidate(`/detail/${inputValue}`)
+    }
 
     useEffect(() => {
         async function loadCoins() {
@@ -43,10 +52,12 @@ export function Home(){
 
     return (
         <main className={styles.container}>
-            <form>
+            <form onSubmit={handleSearch}>
                 <input 
                     type="text"
-                    placeholder="Digite o simbole da moeda: BTC..." 
+                    placeholder="Digite o simbole da moeda: BTC..."
+                    onChange={(e) => setInputValue(e.target.value)} 
+                    value={inputValue}
                 />
                 <button type="submit" title="Search">
                     <Search size={30} color="#fff" />
@@ -67,7 +78,7 @@ export function Home(){
                             return (
                                 <tr className={styles.tr} key={coin.symbol}>
                                     <td className={styles.tdlabel} data-label="Moeda">
-                                        <Link to="/detail/btc">
+                                        <Link to={`/detail/${coin.symbol}`}>
                                             {coin.name} <span>| {coin.symbol}</span> 
                                         </Link>
                                     </td>

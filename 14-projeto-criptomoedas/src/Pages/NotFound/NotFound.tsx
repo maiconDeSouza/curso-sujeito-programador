@@ -1,9 +1,13 @@
+import styles from "./NotFound.module.css"
+import { Link } from "react-router-dom"
+
 export function NotFound(){
     return (
-        <div>
+        <div className={styles.container}>
             <h1>
-                404
+                Pagina 404 não existe...
             </h1>
+            <Link to="/">Volte para Home</Link>
         </div>
     )
 }
