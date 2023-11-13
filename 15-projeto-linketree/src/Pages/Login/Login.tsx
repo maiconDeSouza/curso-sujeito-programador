@@ -1,7 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input/Input";
+import {   FormEvent, useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../services/firebaseConnection";
 
 export function Login(){
+    const [ email, setEmail ] = useState("")
+    const [ password, setPassword ] = useState("")
+    const navigate = useNavigate()
+
+    async function handleLogin(e: FormEvent){
+        e.preventDefault()
+
+        if(!email || !password){
+            alert("preencha todos os campos")
+            return
+        }
+        
+        try {
+            await signInWithEmailAndPassword(auth, email, password)
+            navigate("/admin", {replace: true})
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setEmail("")
+            setPassword("")
+        }
+    }
+
     return (
         <div className="flex flex-col justify-center items-center w-full h-screen">
             <Link to="/">
@@ -15,8 +41,24 @@ export function Login(){
                 </h1>
             </Link>
             <form className="w-full max-w-xl flex flex-col p-3">
-                <Input />
-                <button type="submit" className="h-9 bg-blue-600 rounded border-0 text-lg font-medium text-white">
+                <Input 
+                    placeholder="digite seu e-mail..."
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} 
+                />
+                <Input 
+                    placeholder="digite sua senha"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+
+                />
+                <button 
+                    type="submit" 
+                    className="h-9 bg-blue-600 rounded border-0 text-lg font-medium text-white"
+                    onClick={handleLogin}
+                >
                     Acessar
                 </button>
             </form>

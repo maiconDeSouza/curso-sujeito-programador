@@ -3,6 +3,7 @@ import { Home } from "../Pages/Home/Home"
 import { Login } from "../Pages/Login/Login"
 import { Admin } from "../Pages/Admin/Admin"
 import { Networks } from "../Pages/Networks/Networks"
+import { Private } from "./Private"
 
 export const router = createBrowserRouter([
     {
@@ -15,10 +16,10 @@ export const router = createBrowserRouter([
     },
     {
         path: "/admin",
-        element: <Admin />
+        element: <Private><Admin /></Private>
     },
     {
-        path: "/networks",
-        element: <Networks />
+        path: "/admin/networks",
+        element: <Private><Networks /></Private>
     }
 ])
