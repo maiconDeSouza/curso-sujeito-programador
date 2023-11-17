@@ -4,6 +4,7 @@ import { Login } from "../Pages/Login/Login"
 import { Admin } from "../Pages/Admin/Admin"
 import { Networks } from "../Pages/Networks/Networks"
 import { Private } from "./Private"
+import { NotFound } from "../Pages/NotFound/NotFound"
 
 export const router = createBrowserRouter([
     {
@@ -21,5 +22,9 @@ export const router = createBrowserRouter([
     {
         path: "/admin/networks",
         element: <Private><Networks /></Private>
+    },
+    {
+        path: "*",
+        element: <NotFound />
     }
 ])
