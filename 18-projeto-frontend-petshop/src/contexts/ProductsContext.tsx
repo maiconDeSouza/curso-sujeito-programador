@@ -22,6 +22,8 @@ interface iProductsProviderProps  {
     children: ReactNode
 }
 
+export type OrderProps = "menor" | "maior" | "relevancia"
+
 interface iProductsContextProps {
     productList: iProductsProps[]
     cartProductList: iCartProductsprops[]
@@ -32,6 +34,7 @@ interface iProductsContextProps {
     addProduct: (product: iCartProductsprops) => void
     plusProduct: (id:number) => void
     lessProduct: (id:number) => void
+    setOrderBy: (order: OrderProps) => void
 }
 
 
@@ -40,6 +43,7 @@ export const ProductsContexts = createContext({} as iProductsContextProps)
 export function ProductsProvider({children}:iProductsProviderProps){
     const [ productList, setProductList ] = useState<iProductsProps[]>([])
     const [ cartProductList, setCartProductList ] = useState<iCartProductsprops[]>([])
+    const [ orderBy, setOrderBy ] = useState<OrderProps>("relevancia")
     const totalProductsInCart = useMemo(() => {
         return cartProductList.length
     },[cartProductList])
@@ -109,8 +113,33 @@ export function ProductsProvider({children}:iProductsProviderProps){
     }
 
     useEffect(() => {
-        setProductList(products)    
+        setProductList(products) 
     },[])
+
+    useEffect(() => {
+        function orderByProducts(orderBy: OrderProps){
+            if(orderBy === "menor"){
+                const sortedProducts = [...products].sort((a, b) => a.price - b.price)
+                setProductList(sortedProducts)
+            }
+            if(orderBy === "maior"){
+                const sortedProducts = [...products].sort((a, b) => b.price - a.price)
+                setProductList(sortedProducts)
+            }
+        }
+        if(orderBy === "relevancia"){
+            setProductList(products)
+            return 
+        }
+        if(orderBy === "menor"){
+            orderByProducts(orderBy)
+            return
+        }
+        if(orderBy === "maior"){
+            orderByProducts(orderBy)
+            return
+        }
+    }, [orderBy, productList])
 
     return (
         <ProductsContexts.Provider value={
@@ -123,7 +152,8 @@ export function ProductsProvider({children}:iProductsProviderProps){
                 formatPrice, 
                 addProduct,
                 plusProduct,
-                lessProduct 
+                lessProduct,
+                setOrderBy 
             }
         }>
             {children}

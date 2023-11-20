@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { CardProductCart } from "../../components/CardProductCart/CardProductCart";
 import { ProductsContexts } from "../../contexts/ProductsContext";
+import toast from "react-hot-toast";
 
 export function Cart(){
     const { cartProductList, totalPurchase, formatPrice, totalProductsPurchased } = useContext(ProductsContexts)
+    function purchase(){
+        toast.success("Compra com realizada com sucesso")
+    }
     return (
         <main className="w-full p-3 md:p-5 flex justify-center items-start flex-col md:flex-row gap-4">
             <section className="md:flex-1">
@@ -36,7 +40,16 @@ export function Cart(){
                     <p>Total</p>
                     <span className="text-purple-900">{formatPrice(totalPurchase)}</span>
                 </div>
-                <button className="w-full border border-emerald-900 py-2 border-none  rounded-xl bg-emerald-500 text-slate-200" type="button">Comprar</button>
+                {
+                    totalProductsPurchased > 0 && (
+                        <button 
+                            className="w-full border border-emerald-900 py-2 border-none  rounded-xl bg-emerald-500 text-slate-200" type="button"
+                            onClick={purchase}
+                        >
+                            Comprar
+                        </button>
+                    )
+                }
             </section>
         </main>
     )
