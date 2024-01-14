@@ -6,6 +6,7 @@ import { CarDatail } from '../pages/Car'
 import { NewCar } from '../pages/Dashboard/New'
 import { Login } from '../pages/Login'
 import { Register } from '../pages/Register'
+import { Private } from './private'
 
 export const router = createBrowserRouter([
   {
@@ -20,11 +21,19 @@ export const router = createBrowserRouter([
         path: '/car/:id',
       },
       {
-        element: <Dashboard />,
+        element: (
+          <Private>
+            <Dashboard />
+          </Private>
+        ),
         path: '/dashboard',
       },
       {
-        element: <NewCar />,
+        element: (
+          <Private>
+            <NewCar />
+          </Private>
+        ),
         path: '/dashboard/new',
       },
     ],
