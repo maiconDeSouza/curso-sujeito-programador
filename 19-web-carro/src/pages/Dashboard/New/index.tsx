@@ -14,7 +14,8 @@ import {
   ref,
   uploadBytes,
 } from 'firebase/storage'
-import { storage } from '../../../services'
+import { db, storage } from '../../../services'
+import { addDoc, collection } from 'firebase/firestore'
 
 const schema = z.object({
   name: z.string().min(1, 'O Campo nome é obrigatório'),
@@ -54,9 +55,47 @@ export function NewCar() {
     mode: 'onChange',
   })
 
-  function onSubmit(data: FormData) {
-    console.log(data)
-    reset()
+  async function onSubmit(data: FormData) {
+    if (carImages.length < 1) {
+      alert('Você precisa de pelo menos uma imagem')
+      return
+    }
+
+    if (!user?.name) {
+      alert('Usuário não encontrado')
+      return
+    }
+
+    const carListImages = carImages.map((image) => {
+      return {
+        uid: image.uid,
+        name: image.name,
+        url: image.url,
+      }
+    })
+    try {
+      const responnse = await addDoc(collection(db, 'cars'), {
+        name: data.name,
+        model: data.model,
+        year: data.year,
+        km: data.km,
+        price: data.price,
+        city: data.city,
+        whatsapp: data.whatsapp,
+        description: data.description,
+        created: new Date(),
+        owner: user.name,
+        uid: user.uid,
+        images: carListImages,
+      })
+      console.log(responnse)
+    } catch (error) {
+      console.log('Erro ao cadastrar')
+      console.log(error)
+    } finally {
+      reset()
+      setCarImages([])
+    }
   }
 
   async function handleUpload(image: File) {
